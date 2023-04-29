@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GestorDeTareas.Models.Tarea>
+
+@{
+    ViewData["Title"] = "Lista de tareas";
+}
+
+<h1>Lista de tareas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha límite</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarea in Model)
+        {
+            <tr>
+                <td>@tarea.Id</td>
+                <td>@tarea.Nombre</td>
+                <td>@tarea.Descripcion</td>
+                <td>@tarea.FechaLimite.ToString("dd/MM/yyyy")</td>
+                <td>@(tarea.Completada ? "Completada" : "Pendiente")</td>
+                <td>
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
